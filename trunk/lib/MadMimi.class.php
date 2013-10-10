@@ -2,12 +2,12 @@
 /*
 	Mad Mimi for PHP
 	v2.0.3 - Cleaner, faster, and much easier to use and extend. (In my opinion!)
-	
+
 	For release notes, see the README that should have been included.
-	
+
 	_______________________________________
 
-	Copyright (C) 2010 Mad Mimi LLC 
+	Copyright (C) 2010 Mad Mimi LLC
 	Authored by Nicholas Young <nicholas@madmimi.com> ...and a host of contributors.
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -100,13 +100,13 @@ class MadMimi {
 	// This took years off my life. Seriously. -lkw
 	function escape_for_csv($s) {
 		// Watch out! We may have quotes! So quote them.
-		$s = str_replace('"', '""', $s);  
-		if(preg_match('/,/', $s) || preg_match('/"/', $s) || preg_match("/\n/", $s)) { 
+		$s = str_replace('"', '""', $s);
+		if(preg_match('/,/', $s) || preg_match('/"/', $s) || preg_match("/\n/", $s)) {
 			// Quote the whole thing b/c we have a newline, comma or quote.
-			return '"'.$s.'"';   
+			return '"'.$s.'"';
 		} else {
 			// False alarm. We're good.
-			return $s; 
+			return $s;
 		}
 	}
 	function build_csv($arr) {
@@ -119,7 +119,7 @@ class MadMimi {
 		$csv = substr($csv, 0, -1);
 		$csv .= "\n";
 		foreach ($arr as $key => $value) {
-			$value = $this->escape_for_csv($value);			
+			$value = $this->escape_for_csv($value);
 			$csv .= $value . ",";
 		}
 		$csv = substr($csv, 0, -1);

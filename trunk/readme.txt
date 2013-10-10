@@ -75,6 +75,9 @@ This plugin is released under a GPL license.
 
 == Upgrade Notice ==
 
+= 2.0 = 
+* Added Beta version that works with Gravity Forms 1.7 Add-On Framework.
+
 = 1.0.5 =
 * Fixed `Uninitialized string offset` error when there is only one Mad Mimi list
 * Improved message when Gravity Forms is not available

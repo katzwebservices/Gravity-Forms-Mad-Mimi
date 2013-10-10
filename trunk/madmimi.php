@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms Mad Mimi Add-On (Stable)
 Plugin URI: http://www.gravityforms.com
 Description: Integrates Gravity Forms with Mad Mimi allowing form submissions to be automatically sent to your Mad Mimi account
-Version: 2.0 Stable
+Version: 2.0
 Requires at least: 3.2
 Author: Katz Web Services, Inc.
 Author URI: http://www.katzwebservices.com
