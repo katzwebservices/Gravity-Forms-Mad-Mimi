@@ -64,4 +64,27 @@ class MadMimi_SuperClass extends MadMimi {
 
         return $body;
     }
+
+    public function listSubscribe($list = array(), $email = '', $merge_vars = array(), $email_type = 'html', $double_optin = false, $testfalse = false, $testtrue = true, $send_welcome = true) {
+
+        $params = $merge_vars;
+
+        foreach($params as $key => $p) {
+            if(is_array($p)) {
+                $p = implode(', ', $p);
+            } else {
+                $p = rtrim(trim($p));
+            }
+            if(empty($p) && $p !== '0') {
+                unset($params[$key]);
+            } else {
+                $params[$key] = $p;
+            }
+        }
+
+        $return = $this->AddMembership($list['name'], $email, $params, true);
+
+        return $return;
+
+    }
 }
