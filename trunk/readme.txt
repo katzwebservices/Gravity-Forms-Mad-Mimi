@@ -1,8 +1,8 @@
 === Gravity Forms Mad Mimi Add-on ===
 Tags: gravity forms, forms, gravity, form, crm, gravity form, email, newsletter, mad mimi, madmimi, mailing list, email marketing, newsletters
 Requires at least: 3.2
-Tested up to: 3.8
-Stable tag: trunk
+Tested up to: 3.8.1
+Stable tag: 2.0.2
 Contributors: katzwebdesign
 Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=zackkatz%40gmail%2ecom&item_name=Gravity%20Forms%20Mad%20Mimi&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8
 
@@ -54,6 +54,9 @@ This plugin is released under a GPL license.
 
 == Changelog ==
 
+= 2.0.2 = 
+* (Beta) Fixed field prefix on feed configuration - this was preventing form export.
+
 = 2.0.1 = 
 * Fixed fatal error caused by missing functionality - this was preventing forms from submitting.
 
@@ -77,6 +80,9 @@ This plugin is released under a GPL license.
 * Liftoff!
 
 == Upgrade Notice ==
+
+= 2.0.2 = 
+* (Beta) Fixed field prefix on feed configuration - this was preventing form export. Please re-configure your forms on Beta version
 
 = 2.0.1 = 
 * Fixed fatal error caused by missing functionality - this was preventing forms from submitting.
