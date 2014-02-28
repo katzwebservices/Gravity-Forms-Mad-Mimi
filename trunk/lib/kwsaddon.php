@@ -2,7 +2,7 @@
 /*
 
 KWS Gravity Forms Add-On
-Version: 1.0
+Version: 2.0.2
 
 ------------------------------------------------------------------------
 
@@ -236,7 +236,7 @@ EOD;
                             'type' => 'field_map',
                             'label' => 'Map your fields.',
                             'tooltip' => "<h6>" . __("Map Fields", "gravity-forms-madmimi") . "</h6>" . sprintf(__("Associate your %s merge variables to the appropriate Gravity Form fields by selecting.", "kwsaddon"), $this->get_service_name()),
-                            'name' => null,
+                            'name' => 'field_map', //changed v2.0.2 Mad Mimi
                             'field_map' => $this->feed_settings_fields_field_map()
                         ),
                         array(
@@ -473,9 +473,9 @@ EOD;
             $merge_vars = array();
             foreach($feed["meta"] as $var_tag => $field_id){
 
-                if(empty($field_id) || strpos($var_tag, 'feed_condition')) { continue; }
+                if( empty( $field_id ) || is_array( $field_id ) || strpos($var_tag, 'feed_condition')) { continue; }
 
-                $var_tag = str_replace('field_map__', '', $var_tag);
+                $var_tag = str_replace('field_map_', '', $var_tag ); // prefix defined in feed_settings_fields()
 
                 $field = RGFormsModel::get_field($form, $field_id);
 

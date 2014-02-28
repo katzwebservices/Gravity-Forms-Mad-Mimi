@@ -25,17 +25,17 @@ if (class_exists("GFForms")) {
                         array(
                             'type'    => 'html',
                             'value'    => $this->get_service_signup_message(),
-                            'dependency' => 'KWSGFMadMimiAddon::is_invalid_api',
+                            'dependency' => array(&$this, 'is_invalid_api'),
                         ),
                         array(
                             'type'    => 'html',
                             'value'    => $this->invalid_api_message(),
-                            'dependency' => 'KWSGFMadMimiAddon::is_invalid_api',
+                            'dependency' => array(&$this, 'is_invalid_api'),
                         ),
                         array(
                             'type'    => 'html',
                             'value'    => $this->valid_api_message(),
-                            'dependency' => 'KWSGFMadMimiAddon::is_valid_api',
+                            'dependency' => array(&$this, 'is_valid_api'),
                         ),
                         array(
                             "name"    => "email",
@@ -55,7 +55,7 @@ if (class_exists("GFForms")) {
                             "name"    => "debug",
                             "label"   => __("Debug Form Submissions", "gravity-forms-madmimi"),
                             "type"    => "checkbox",
-                            'dependency' => 'KWSGFMadMimiAddon::is_valid_api',
+                            'dependency' => array(&$this, 'is_valid_api'),
                             "choices" => array(
                                 array(
                                     'label' => 'Enable Debug',
@@ -258,7 +258,7 @@ if (class_exists("GFForms")) {
 
             try {
                 $merge_vars = $this->get_merge_vars_from_entry($feed, $entry, $form);
-
+				
                 if(!isset($merge_vars['source_form']) && apply_filters('gf_madmimi_add_source', true) && isset($form['title'])) {
                     $merge_vars['source_form'] = esc_html($form['title']);
                 }
